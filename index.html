@@ -1,156 +1,500 @@
 <!DOCTYPE html>
-<html lang="eng">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porto Data Powwow 2024</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-		html {
-			scroll-behavior: smooth;
-		}
-        body {
-            background-color: #102357;
-            color: #ffffff;
-        }
-        .logo {
-            height: 60px;
-            width: auto;
-        }
-        .navbar-dark .navbar-nav .nav-link {
-            color: #ffffff;
-            font-size: 20px;
-            padding: 10px 25px;
-        }
-        .navbar-dark .navbar-nav .nav-item.active .nav-link,
-        .navbar-dark .navbar-nav .nav-link.active,
-        .navbar-dark .navbar-nav .nav-link.show,
-        .navbar-dark .navbar-nav .nav-item.show .nav-link {
-            color: #04cac1;
-			border-radius: 25px;
-        }
-        .content {
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Gon&ccedil;alo Augusto" />
+        <title>Porto Data Powwow 2024</title>
+        <link rel="icon" type="image/x-icon" href="..." />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="./assets/css/styles.css" rel="stylesheet" />
+        <style type="text/css">
+            .tabs-schedule.nav-tabs {
+                border: 0px;
+                border-bottom: 2px solid #f5f5f5;
+                margin-bottom: 40px;
+                margin-left: 0px;
+                text-align: center;
+            }
 
-        .section {
-            padding-top: 80px;
-            min-height: 1000px;
-        }
-        .cta-button {
-            background-color: #ffffff;
-            color: #102357;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            text-decoration: none;
-        }
-		.row {
-			margin-top: 30px;
-		}
-    </style>
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="100">
+            .tabs-schedule.nav-tabs > li {
+                padding: 0px;
+            }
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #102357;">
-        <div class="container-fluid">
-            <img src="https://www.up.pt/datapowwow/wp-content/uploads/sites/1009/2023/10/powwow_logo-2-e1697454127566.png" alt="Logotipo do Evento" class="logo">            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#program">Programação</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contato</a>
-                    </li>
-                </ul>
+            .tabs-schedule.nav-tabs > li > a {
+                font-size: 20px;
+                display: block;
+                padding: 4px 20px;
+                color: #333;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 700;
+                margin-bottom: -2px;
+                position: relative;
+                border: 0px;
+            }
+
+            .tabs-schedule.nav-tabs > li > a:after {
+                content: "";
+                width: 0;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                background: #8bcb26;
+                transition: all .3s;
+                -webkit-transition: all .3s;
+            }
+
+            .tabs-schedule.nav-tabs > li > a span {
+                font-size: 12px;
+                display: block;
+                color: #999;
+                font-family: #8bcb26;
+                font-weight: 400;
+            }
+
+            .tabs-schedule.nav-tabs > li > a.active,
+            .tabs-schedule.nav-tabs > li > a:hover {
+                color: #8bcb26;
+            }
+
+            .tabs-schedule.nav-tabs > li > a.active:after,
+            .tabs-schedule.nav-tabs > li > a:hover:after {
+                width: 100%;
+            }
+
+            .event-info {
+                padding-right: 30px;
+                text-align: right;
+                text-transform: uppercase;
+            }
+
+            .event-info span {
+                display: block;
+                font-size: 16px;
+            }
+
+            .event-info .event-hall {
+                margin-top: 10px;
+                font-style: normal;
+                font-size: 12px;
+                padding: 3px 10px;
+                border-right: 3px solid #8bcb26;
+                background: #f5f5f5;
+                font-weight: 400;
+            }
+
+            .event-detail {
+                border-left: 2px solid #8bcb26;
+                padding-left: 30px;
+                position: relative;
+            }
+
+            .event-detail:before {
+                width: 14px;
+                height: 14px;
+                border-radius: 7px;
+                background: #fff;
+                position: absolute;
+                left: -7px;
+                top: 10px;
+                content: "";
+            }
+
+            .event-detail:after {
+                content: "\f105";
+                font-family: "FontAwesome";
+                position: absolute;
+                left: -2px;
+                top: 3px;
+                color: #8bcb26;
+                font-size: 28px;
+            }
+
+            .event-detail h3 {
+                margin-bottom: 20px;
+            }
+
+            .event-detail h3 a {
+                color: #555;
+            }
+
+            .event-detail .img-fluid {
+                border-radius: 5px;
+            }
+
+            .event-detail h4 {
+                margin-bottom: 0px;
+                font-weight: 600;
+                font-size: 14px;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">
+                    <img src="./assets/img/powwow_logo-2.png" alt="Event Logo" class="logo"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="#program">Program</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sponsors">Sponsors</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+        <!-- Header-->
+        <header class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                    <h1 class="masthead-heading mb-0">Data Science event</h1>
+                    <h2 class="masthead-subheading mb-0">organized by students</h2>
+                    <div class="row mt-3">
+                        <img src="./assets/img/logo-with-university.png" alt="Logo with University" class="mx-auto d-block" style="width: auto; height: 88px;"/>
+                    </div>
+                    <h6 class="mt-1">2<sup>nd</sup> Edition</h6>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+        <!-- Content section speakers -->
+        <!-- <section id="speakers">
+            <div class="container">
+                <div class="row">
+                    <h2>Speakers</h2>
+                </div>
+                <div class="row">
+                    <div id="carouselSpeakers" class="carousel slide mx-2" data-bs-ride="false">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselSpeakers" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselSpeakers" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselSpeakers" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img src="../images/Jodie-scaled_upd-1-2048x1024.jpg" decoding="async" loading="lazy" class="d-block w-100" alt="Jodie's face">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Jodie Burchell</h5>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </div>
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../images/Jodie-scaled_upd-1-2048x1024.jpg" decoding="async" loading="lazy" class="d-block w-100" alt="Jodie's face">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Jodie Burchell</h5>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </div>
+                            </div>
+                            <div class="carousel-item">
+                            <img src="../images/Jodie-scaled_upd-1-2048x1024.jpg" decoding="async" loading="lazy" class="d-block w-100" alt="Jodie's face">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Jodie Burchell</h5>
+                                <p>Some representative placeholder content for the second slide.</p>
+                            </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselSpeakers" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon rounded" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.3);"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselSpeakers" data-bs-slide="next">
+                            <span class="carousel-control-next-icon rounded" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.3);"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- <div class="container"><hr/></div> -->
+        <!-- Content keynote 1-->
+        <!-- <section id="speakers">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid rounded-circle" decoding="async" loading="lazy" src="../images/Rayid-1_upd-1.png" alt="Rayid's face" /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">Rayid Ghani</h2>
+                            <h5 class="text-center">Using AI/ML/Data Science for Social Good: Fairly and Equitably</h5>
+                            <p class="text-break">Can AI, ML and Data Science help reduce infant and maternal mortality? Can it reduce the impact of mental and behavioral health crisis? Can it help cities better target limited resources to improve the lives of citizens and achieve equity? We're all aware of the potential of ML and AI but turning this potential into tangible and equitable social impact involves dealing with both technical and ethical challenges.</p>
+                            <div class="row d-flex justify-content-center">
+                                <button type="button" class="btn rounded-pill" style="background: #35bdb4; width: auto; color: white;" data-bs-toggle="modal" data-bs-target="#ReadMoreModal" data-title="Rayid Ghani" data-subtitle="Using AI/ML/Data Science for Social Good: Fairly and Equitably" data-first-description="Can AI, ML and Data Science help reduce infant and maternal mortality? Can it reduce the impact of mental and behavioral health crisis? Can it help cities better target limited resources to improve the lives of citizens and achieve equity? We're all aware of the potential of ML and AI but turning this potential into tangible and equitable social impact involves dealing with both technical and ethical challenges." data-second-description="In this talk, I will discuss lessons learned from working on numerous projects over the past few years with non-profits and governments on high-impact public policy and social challenges in criminal justice, public health, education, economic development, public safety, workforce training, and urban infrastructure. I will highlight opportunities as well as challenges around ethics, bias, and fairness that need to be tackled in order to have social and policy impact in a fair and equitable manner.">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Content keynote 2-->
+        <!-- <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-5"><img class="img-fluid rounded-circle" decoding="async" loading="lazy" src="../images/Jodie.jpg" alt="Jodie's face" /></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <h2 class="display-4">Jodie Burchel</h2>                            
+                            <h5 class="text-center">How to sell a data science project (without selling your soul)</h5>
+                            <p class="text-break">Have you been keeping track of the amazing data science work being done at companies like Google, Meta and Microsoft, and dreamed of doing something similar in your own company? Don't worry, getting your manager on board might not be as tough as it seems!</p>
+                            <div class="row d-flex justify-content-center">
+                                <button type="button" class="btn rounded-pill" style="background: #35bdb4; width: auto; color: white;" data-bs-toggle="modal" data-bs-target="#ReadMoreModal" data-title="Jodie Burchel" data-subtitle="How to sell a data science project (without selling your soul)" data-first-description="Have you been keeping track of the amazing data science work being done at companies like Google, Meta and Microsoft, and dreamed of doing something similar in your own company? Don't worry, getting your manager on board might not be as tough as it seems!" data-second-description="In this talk, we'll explore the role of research-oriented data scientists within profit-driven enterprises, and discover how to craft and present projects that not only ignite your scientific curiosity but also capture your company's interest. We will delve into the delicate balance between innovation and the fear of failure that businesses must navigate, and you'll learn how to negotiate this while developing your projects. By the end of this talk, you'll leave with knowledge and strategies to seamlessly merge your scientific passion with your company's objectives.">Read More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- Content section 3-->
+        <!-- <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/03.jpg" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">Let there be rock!</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <div class="container"><hr/></div>
 
-    <div class="container section" id="home">
-        <div class="content">
-			<div class="row">
-				<img src="https://www.up.pt/datapowwow/wp-content/uploads/sites/1009/2023/10/home.png" alt="" style="width: 100%;"/>
-			</div>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <section id="program">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 mt-4 text-center" style="margin-left: auto !important; margin-right: auto !important;">
+                        <div class="center-title mb-2">
+                            <h2>Event Schedule</h2>
+                            <p class="lead">September 27, 2024 ∙ FCUP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-10" style="margin-left: auto !important; margin-right: auto !important;">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade active show" id="01">
+                                <div class="row mb-3" style="opacity: 0.7;">
+                                    <div class="col-sm-3 event-info">
+                                        <span>09:00 AM to 09:30 AM</span>
+                                        <span class="event-hall">Entrance Hall</span>
+                                    </div>
+                                    <div class="col-sm-9 event-detail">
+                                        <h3>Registration</h3>
+                                    </div>
+                                </div>
+                                <div class="row mb-3" style="opacity: 0.7;">
+                                    <div class="col-sm-3 event-info">
+                                        <span>09:30 AM to 09:45 AM</span>
+                                        <span class="event-hall">Auditorium</span>
+                                    </div>
+                                    <div class="col-sm-9 event-detail">
+                                        <h3>Welcome Session</h3>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3 event-info">
+                                        <span>9:45 AM to 10:30 AM</span>
+                                        <span class="event-hall">Auditorium</span>
+                                    </div>
+                                    <div class="col-sm-9 event-detail">
+                                        <h3>Rayid Ghani
+                                            <a href="https://www.linkedin.com/in/rayid/" target="_blank"><img decoding="async" loading="lazy" src="./assets/img/linkedin-logo.png" alt="Linkedin Logo" style="width: 19px; height: 19px;" /></a>
+                                        </h3>
+                                        <div class="row mb-2">
+                                            <div class="col-sm-2 mb-2">
+                                                <img decoding="async" loading="lazy" src="./assets/img/Rayid-1_upd-1.png" alt="Rayid's face" class="img-fluid">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <h4><strong>Using AI/ML/Data Science for Social Good: Fairly and Equitably</strong></h4>
+                                                <p class="fs-6">Can AI, ML and Data Science help reduce infant and maternal mortality? Can it reduce the impact of mental and behavioral health crisis? Can it help cities better target limited resources to improve the lives of citizens and achieve equity? We're all aware of the potential of ML and AI but turning this potential into tangible and equitable social impact involves dealing with both technical and ethical challenges. <a href="#" style="color: #35bdb4;" data-bs-toggle="modal" data-bs-target="#ReadMoreModal" data-title="Rayid Ghani" data-subtitle="Using AI/ML/Data Science for Social Good: Fairly and Equitably" data-first-description="Can AI, ML and Data Science help reduce infant and maternal mortality? Can it reduce the impact of mental and behavioral health crisis? Can it help cities better target limited resources to improve the lives of citizens and achieve equity? We're all aware of the potential of ML and AI but turning this potential into tangible and equitable social impact involves dealing with both technical and ethical challenges." data-second-description="In this talk, I will discuss lessons learned from working on numerous projects over the past few years with non-profits and governments on high-impact public policy and social challenges in criminal justice, public health, education, economic development, public safety, workforce training, and urban infrastructure. I will highlight opportunities as well as challenges around ethics, bias, and fairness that need to be tackled in order to have social and policy impact in a fair and equitable manner." data-image="./assets/img/Rayid-1_upd-1.png">Read More</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3" style="opacity: 0.7;">
+                                    <div class="col-sm-3 event-info">
+                                        <span>10:30 AM to 11:00 AM</span>
+                                        <span class="event-hall">Showroom</span>
+                                    </div>
+                                    <div class="col-sm-9 event-detail">
+                                        <h3>Coffee Break</h3>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-sm-3 event-info">
+                                        <span>11:00 AM to 11:45 AM</span>
+                                        <span class="event-hall">Auditorium</span>
+                                    </div>
+                                    <div class="col-sm-9 event-detail">
+                                        <h3>Jodie Burchel
+                                        <a href="https://www.linkedin.com/in/jodieburchell" target="_blank"><img decoding="async" loading="lazy" src="./assets/img/linkedin-logo.png" alt="Linkedin Logo" style="width: 19px; height: 19px;" /></a>
+                                        </h3>
+                                        <div class="row mb-2">
+                                            <div class="col-sm-2 mb-2">
+                                                <img decoding="async" loading="lazy" src="./assets/img/Jodie.jpg" alt="Jodie's face" class="img-fluid">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <h4><strong>How to sell a data science project (without selling your soul)</strong></h4>
+                                                <p class="fs-6">Have you been keeping track of the amazing data science work being done at companies like Google, Meta and Microsoft, and dreamed of doing something similar in your own company? Don't worry, getting your manager on board might not be as tough as it seems! <a href="#" style="color: #35bdb4;" data-bs-toggle="modal" data-bs-target="#ReadMoreModal" data-title="Jodie Burchel" data-subtitle="How to sell a data science project (without selling your soul)" data-first-description="Have you been keeping track of the amazing data science work being done at companies like Google, Meta and Microsoft, and dreamed of doing something similar in your own company? Don't worry, getting your manager on board might not be as tough as it seems!" data-second-description="In this talk, we'll explore the role of research-oriented data scientists within profit-driven enterprises, and discover how to craft and present projects that not only ignite your scientific curiosity but also capture your company's interest. We will delve into the delicate balance between innovation and the fear of failure that businesses must navigate, and you'll learn how to negotiate this while developing your projects. By the end of this talk, you'll leave with knowledge and strategies to seamlessly merge your scientific passion with your company's objectives." data-image="./assets/img/Jodie.jpg">Read More</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3" style="opacity: 0.7;">
+                                    <div class="col-sm-3 event-info">
+                                        <span>11:45 AM to 02:00 PM</span>
+                                        <span class="event-hall">Showroom</span>
+                                    </div>
+                                    <div class="col-sm-9 event-detail">
+                                        <h3>Lunch Break</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-			<div class="row" style=" background-color: #ddeac9; padding: 35px; border-radius: 10px;">
-				<p class="text-center" style="width: 100%; font-size: 40px; font-family: Georgia, serif; color: #102357;">
-					<strong>Second edition</strong> of the <strong>largest Data Science event organized by students</strong> in Portugal
-				</p>
-			</div>
-			<div class="row" style=" background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px;">
-				<p class="text-center" style=" font-size: 22px; font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;">					
-					The event will take place at the Faculty of Sciences - University of Porto (FCUP) and includes <strong style="color: #04cac1;">keynote talks by Portuguese and International speakers</strong>, <strong style="color: #04cac1;">poster sessions</strong> with projects and dissertations, as well as <strong style="color: #04cac1;">networking activities</strong>. The best part: it's <strong style="color: #04cac1;">FREE</strong> for UP students!
-				</p>
-			</div>
-			
-            <h1>Bem-vindo ao Evento de Data Science</h1>
-            <p>Junte-se a nós para um dia de palestras, workshops e networking com os maiores especialistas em Data Science.</p>
-        </div>
-    </div>
+        <div class="container"><hr/></div>
+        
+        <div class="modal fade" id="ReadMoreModal" tabindex="-1" aria-labelledby="ReadMoreModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="ReadMoreModalLabel"></h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="p-2"><img class="img-fluid rounded" decoding="async" loading="lazy" src="" alt="Speaker's face" /></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-2">
+                                    <h5 class="text-center"></h5>
+                                    <p class="text-break"></p>
+                                    <p class="text-break"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn" style="background: #35bdb4; width: auto; color: white;" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <div class="container section" id="about">
-        <div class="content">
-            <h1>Sobre o Evento</h1>
-            <p>Informações sobre os objetivos e estrutura do evento.</p>
-        </div>
-    </div>
+        <section id="registration" class="masthead text-center text-white">
+            <div class="masthead-content">
+                <div class="container px-5">
+                    <h1 class="text-center mb-2" style="color: white;"><strong style="color: #35bdb4;">Student of UP</strong> &rarr; <strong style="color: #35bdb4;">FREE</strong> entry</h1>
+                        <h3 class="text-center mb-4" style="color: white;">Fill in the form &rarr; <a style="color: #35bdb4;" href="https://forms.gle/FC9k8B9kw68NLt7w9" target="_blank">available here</a></h3>
+                        
+                        <h2 class="text-center mb-2 mt-5" style="color: white;"><strong style="color: #35bdb4;">Not part of the UP community</strong>? Fear not!</h2>
+                        <h3 class="text-center" style="color: white;">The cost is <strong>50&euro;</strong> &rarr; <a style="color: #35bdb4;" href="https://forms.gle/4eTZxM4SRkLxpxk79" target="_blank">available here</a></h3>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </section>
 
-    <div class="container section" id="program">
-        <div class="content">
-            <h1>Programação</h1>
-            <p>Detalhes sobre as sessões, palestrantes e atividades programadas.</p>
-        </div>
-    </div>
+        <div class="container"><hr/></div>
 
-    <div class="container section" id="contact">
-        <div class="content">
-            <h1>Contato</h1>
-            <p>Como entrar em contato com os organizadores do evento.</p>
-        </div>
-    </div>
+        <section id="location">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 mt-4 text-center" style="margin-left: auto !important; margin-right: auto !important;">
+                        <div class="center-title mb-2">
+                            <h2>Location</h2>
+                        </div>
+                    </div>
+                </div>
 
-	<div class="container section">
-        <div class="content">
-            <h4 class="text-center">The following education programmes are responsible for the organization of the event.</h4>
-			<div class="p-2 bd-highlight text-center">
-				<a href="https://mds.dcc.fc.up.pt/" style="color: #04cac1; font-size: large;" target="_blank" >Master in Data Science</a>
-				<p><strong>(FCUP)</strong></p>
-			</div>
-			<div class="d-flex justify-content-around mt-4">
-				<div class="p-2 bd-highlight text-center">
-					<a href="https://dei.fe.up.pt/mdse/" style="color: #04cac1; font-size: large;" target="_blank" >Master in Data Science and Engineering</a>
-					<p><strong>(FEUP)</strong></p>
-				</div>
-				<div class="p-2 bd-highlight text-center">
-					<a href="https://programmes.fep.up.pt/masters/data-analytics/" style="color: #04cac1; font-size: large;" target="_blank" >Master in Data Analytics</a>
-					<p><strong>(FEP)</strong></p>
-				</div>
-			</div>
-        </div>
-    </div>
+                <div class="row mt-4 mb-4">
+                    <h5 class="text-center">The event will take place at the <strong style="color: #13204b;">Faculty of Sciences - University of Porto (FCUP)</strong></h5>
+                    <h5 class="text-center"><strong>Address</strong>: s/n, Rua Campo Alegre 1021/1055, 4169-007 Porto</h5>
+                    <!-- <h5 class="text-center"><strong>Coordinates</strong>: 41.1780, -8.5980 (41o 10' 40.8'' N, 8o 35' 52.8'' W)</strong></h5> -->
+                </div>
+                <div class="row mb-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.178618931824!2d-8.643345823575721!3d41.152453610534174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2465748665b511%3A0x652241b7e04eb60a!2sDepartamento%20de%20Ci%C3%AAncia%20de%20Computadores%20FCUP!5e0!3m2!1spt-PT!2spt!4v1718820924541!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			$('.navbar-nav>li>a').on('click', function(){
-				$('.navbar-collapse').collapse('hide');
-			});
-		});
-	</script>
-</body>
+        <div class="container"><hr/></div>
+
+        <section id="sponsors">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 mt-4 text-center" style="margin-left: auto !important; margin-right: auto !important;">
+                        <div class="center-title mb-2">
+                            <h2>Sponsors</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-center my-5">...</h3>
+        </section>
+
+        <div class="container"><hr/></div>
+          
+        <!-- Footer-->
+        <footer class="py-5 bg-black">
+            <div class="container px-5">
+                <h4 class="text-center" style="color: white;">The following education programmes are responsible for the organization of the event.</h4>
+                <div class="p-2 bd-highlight text-center">
+                    <a href="https://mds.dcc.fc.up.pt/" style="color: #04cac1; font-size: large;" target="_blank" >Master in Data Science</a>
+                    <p style="color: white;"><strong>(FCUP)</strong></p>
+                </div>
+                <div class="d-flex justify-content-around mt-4">
+                    <div class="p-2 bd-highlight text-center">
+                        <a href="https://dei.fe.up.pt/mdse/" style="color: #04cac1; font-size: large;" target="_blank" >Master in Data Science and Engineering</a>
+                        <p style="color: white;"><strong>(FEUP)</strong></p>
+                    </div>
+                    <div class="p-2 bd-highlight text-center">
+                        <a href="https://programmes.fep.up.pt/masters/data-analytics/" style="color: #04cac1; font-size: large;" target="_blank" >Master in Data Analytics</a>
+                        <p style="color: white;"><strong>(FEP)</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid px-3 d-flex justify-content-around">
+                <p class="m-0 text-center text-white small">Copyright &copy; Porto DataPowwow, 2024</p>
+                <h6 style="color: white;">Follow us:&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/datapowwow_2024/" target="_blank"><img decoding="async" loading="lazy" src="./assets/img/instagram-logo.svg" alt="Instagram Logo" style="width: 24px; height: 24px;" /></a></h6>
+                
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="./assets/js/scripts.js"></script>
+    </body>
 </html>

@@ -4,10 +4,8 @@
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-one-page-wonder/blob/master/LICENSE)
 */
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const readMoreModal = document.getElementById('ReadMoreModal');
-    const navLinks = document.querySelectorAll('.navbar-nav > li > a');
 
     readMoreModal.addEventListener('show.bs.modal',  (event) => {
         let button = event.relatedTarget;
@@ -29,13 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
         modalP[1].textContent = secondDescription;
         image.src = imageSrc;
     });
-    navLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-            let navbarCollapse = document.querySelector('.navbar-collapse');
-            let bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                toggle: false
-            });
-            bsCollapse.hide();
-        });
-    });
 });
+
+function collapseIfNeeded () {
+    let navbarCollapse = document.querySelector('.navbar-collapse');
+    let bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+        toggle: false
+    });
+    bsCollapse.hide();
+}
